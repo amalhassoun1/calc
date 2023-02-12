@@ -56,7 +56,6 @@ class Calculator {
         default:
           return
       }
-  
       this.currentOperand = computation;
       this.operation = undefined
       this.previousOperand = ''
@@ -134,9 +133,5 @@ class Calculator {
          {
           calculator.compute()
           calculator.updateDisplay()
-         }
-    else if (event.key == 46)
-         {
-          console.log("test")
          }
 });

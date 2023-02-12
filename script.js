@@ -56,7 +56,8 @@ class Calculator {
         default:
           return
       }
-      this.currentOperand = computation.toFixed(10);
+  
+      this.currentOperand = computation;
       this.operation = undefined
       this.previousOperand = ''
     }
@@ -111,3 +112,31 @@ class Calculator {
     calculator.delete()
     calculator.updateDisplay()
   })
+
+  document.addEventListener('keypress', (event) => {
+    if (event.key == "0" || event.key == "1"
+     || event.key == "2" || event.key == "3"
+     || event.key == "4" || event.key == "5"
+     || event.key == "6" || event.key == "7"
+     || event.key == "8" || event.key == "9"
+     || event.key == "." ) 
+         {
+          calculator.appendNumber(event.key)
+          calculator.updateDisplay()
+         }
+    else if(event.key == "+" || event.key == "-"
+         || event.key == "*" || event.key == "/")
+         {
+          calculator.chooseOperation(event.key)
+          calculator.updateDisplay()
+         }
+    else if (event.key == "=") 
+         {
+          calculator.compute()
+          calculator.updateDisplay()
+         }
+    else if (event.key == 46)
+         {
+          console.log("test")
+         }
+});
